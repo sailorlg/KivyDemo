@@ -25,7 +25,7 @@ from kivy.app import App
 
 # kivy内置了丰富的控件(widget),如
 # 按钮(button), 复选框(checkbox), 标签(label), 输入框(textinput), 滚动容器(scrollable_container)等
-from kivy.uix.button import Button
+# from kivy.uix.button import Button
 
 # 引入BoxLayout布局
 from kivy.uix.boxlayout import BoxLayout
@@ -35,9 +35,9 @@ class IndexPage(BoxLayout):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         # 添加一个按钮
-        self.join = Button(text="Hellow World")
-        # 将按钮添加到页面控件中
-        self.add_widget(self.join)
+        # self.join = Button(text="Hellow World")
+        # # 将按钮添加到页面控件中
+        # self.add_widget(self.join)
 
 # 从App类中继承了kivy应用最基本的方法, 如创建窗口, 设置窗口大小和位置等
 class TestApp(App):
