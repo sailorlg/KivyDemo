@@ -56,43 +56,58 @@ from kivy.graphics import Rectangle, Color
 #         return IndexPage()
 #
     
+#
+# # 2.2.2
+# class FloatLayoutApp(App):  # 继承App类
+#
+#     def build(self):  # 实现App类的build()方法
+#
+#         def update_rect(layout, * args):
+#             """
+#             设计背景尺寸, 可忽略
+#             :param layout:
+#             :param args:
+#             :return:
+#             """
+#             layout.rect.pos = layout.pos
+#             layout.rect.size = layout.size
+#
+#         float_layout = FloatLayout()
+#
+#         # 设置背景颜色(可忽略)
+#         with float_layout.canvas:
+#             Color(1, 1, 1, 1)
+#             float_layout.rect = Rectangle(pos=float_layout.pos, size=float_layout.size)
+#             float_layout.bind(pos=update_rect, size=update_rect)
+#
+#         # 在布局内的[300, 200]处添加一个0.3,0.3的按钮
+#         button = Button(text="Hello FloutLayout", size_hint=(0.3, 0.2), pos=(300, 200))
+#
+#         # 将按钮添加到布局内
+#         float_layout.add_widget(button)
+#
+#         # 返回布局
+#         return float_layout
+#
+#
+# # 当.py文件被直接运行时, if __name__ == "__main__"之下的代码块被运行
+# # 当.py文件以模块形式被导入时, if __name__ == "__main__"之下的代码块不被运行
+# if __name__ == "__main__":
+#     FloatLayoutApp().run()  # 启动应用容器
 
-# 2.2.2
-
-class FloatLayoutApp(App):  # 继承App类
-    
-    def build(self):  # 实现App类的build()方法
-        
-        def update_rect(layout, * args):
-            """
-            设计背景尺寸, 可忽略
-            :param layout:
-            :param args:
-            :return:
-            """
-            layout.rect.pos = layout.pos
-            layout.rect.size = layout.size
-        
-        float_layout = FloatLayout()
-        
-        # 设置背景颜色(可忽略)
-        with float_layout.canvas:
-            Color(1, 1, 1, 1)
-            float_layout.rect = Rectangle(pos=float_layout.pos, size=float_layout.size)
-            float_layout.bind(pos=update_rect, size=update_rect)
-            
-        # 在布局内的[300, 200]处添加一个0.3,0.3的按钮
-        button = Button(text="Hello FloutLayout", size_hint=(0.3, 0.2), pos=(300, 200))
-        
-        # 将按钮添加到布局内
-        float_layout.add_widget(button)
-        
-        # 返回布局
-        return float_layout
 
 
-# 当.py文件被直接运行时, if __name__ == "__main__"之下的代码块被运行
-# 当.py文件以模块形式被导入时, if __name__ == "__main__"之下的代码块不被运行
+# 2.2.3
+
+class FloatLayoutWidget(FloatLayout):  # 布局类
+    def __init__(self, **kwargs):  # 初始化
+        super().__init__(**kwargs)
+
+
+class FloatLayoutApp(App):  # 实现App类的build()方法, 继承自App类
+    def build(self):
+        return FloatLayoutWidget()  #返回根控件
+
+
 if __name__ == "__main__":
     FloatLayoutApp().run()  # 启动应用容器
-

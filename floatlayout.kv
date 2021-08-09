@@ -1,0 +1,17 @@
+<Button>:
+    font_size: 40
+    size_hint: 0.3, 0.3
+
+<FloatLayoutWidget>:
+
+    canvas:
+        Color:
+            rgba: [1, 1, 1, 1]
+        Rectangle:
+            size: self.size
+            pos: self.pos
+
+    Button:
+        text: "Btn0"
+        background_color: 0.1, 0.5, 0.6, 1
+        pos_hint: {'x':0.1, 'top':1}
