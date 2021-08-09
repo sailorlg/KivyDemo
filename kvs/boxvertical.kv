@@ -1,0 +1,26 @@
+<BoxLayoutWidget>:
+    orientation: 'vertical'
+
+    canvas:
+        Color:
+            rgba: [1, 1, 1, 1]
+        Rectangle:
+            size: self.size
+            pos: self.pos
+
+    Button:
+        text: 'Hello'
+
+    Button:
+        text: 'BoxLayout'
+
+    BoxLayout:
+        orientation: 'horizontal'
+
+        Button:
+            text: "First"
+            size_hint_y: 0.2
+
+        Button:
+            text: "Second"
+            size_hint_y: 0.3
