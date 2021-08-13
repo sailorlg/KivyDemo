@@ -25,7 +25,6 @@ class ButtonSampleWidget(BoxLayout):
 		print("----------release_button--------------")
 		
 		
-
 class ButtonSampleApp(App):
 	def build(self):
 		self.root_canvas = ButtonSampleWidget()

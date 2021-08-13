@@ -41,3 +41,32 @@
         on_press:
             print("KV: on_press")
             root.press_button("")
+
+    BoxLayout:
+        orientation: "vertical"
+
+        Label:
+            text: "Can Only Display Glyphs That Is Available In The Font"
+            font_size: '20sp'
+            color: 0.9, 0.2, 0.1, 1
+            italic: True
+            text_size: cm(6), mm(20)
+            haligh: "right"
+            valign: "middle"
+            strikethrouth: True
+
+        Label:
+            canvas:
+                Color:
+                    rgba: (0.1, 0.1, 0.1, 0.1)
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            text: "测试 Test 테스트"
+            color: 0.2, 0.2, 0.9, 1
+            bold: True
+            text_size: cm(4), cm(2)
+            halign: 'left'
+            valigh: 'top'
+            underline: True
+            line_height: 2.0
