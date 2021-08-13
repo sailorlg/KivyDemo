@@ -1,18 +1,18 @@
 #:import C kivy.utils.get_color_from_hex
 
-<BottomColorButton@ToggleButton>:
+<BottomColorButton@FrameToggleButton>:
     group: 'color'
-    background_normal: ""
-    background_down: ""
+    background_normal: "./images/normal.jpg"
+    background_down: "./images/down.jpg"
     border: (3, 3, 3, 3)
     on_release: app.draw_canvas_widget.change_color(self.background_color)
 
-<LineWidthButton@ToggleButton>:
+<LineWidthButton@FrameToggleButton>:
     group: "line_width"
     color: C("#2c3e50")
     background_color:  C("#ecf0f1")
-    background_normal: ""
-    background_down: ""
+    background_normal: "./images/normal.jpg"
+    background_down: "./images/down.jpg"
     on_release: app.draw_canvas_widget.change_line_width(self.text)
 
 
@@ -39,6 +39,9 @@
             state: "down"
         LineWidthButton:
             text: "Thick"
+        Button:
+            text: "Clear"
+            on_release: root.clear_canvas()
 
 
     BoxLayout:

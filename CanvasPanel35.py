@@ -7,8 +7,17 @@ Builder.load_file('./kvs/paint35.kv')
 from kivy.app import App
 from kivy.graphics import Line, Color  # 引入绘图
 from kivy.uix.widget import Widget  # 引入控件
+from kivy.uix.behaviors import ToggleButtonBehavior
 from kivy.uix.togglebutton import ToggleButton
 from kivy.utils import get_color_from_hex
+
+
+class FrameToggleButton(ToggleButton):
+	"""当前按钮增加边框"""
+	def do_press(self):
+		"""点击改变状态"""
+		if self.state == "normal":
+			ToggleButtonBehavior.do_press(self)
 
 class DrawCanvasWidget(Widget):  # 布局类
 	def __init__(self, **kwargs):
@@ -35,11 +44,21 @@ class DrawCanvasWidget(Widget):  # 布局类
 		
 	def change_color(self, new_color):
 		"""调色"""
+		self.last_color = new_color
 		self.canvas.add(Color(*new_color))
 		
 	def change_line_width(self, line_width='Normal'):
 		"""线宽"""
 		self.line_width = {'Thin': 1, 'Normal': 2, 'Thick': 4}[line_width]
+		
+	def clear_canvas(self):
+		"""清空"""
+		saved = self.children[:]
+		self.clear_widgets()
+		self.canvas.clear()
+		for a_widget in saved:
+			self.add_widget(a_widget)
+		self.change_color(self.last_color)
 
 class Paint35App(App):
 	def build(self):
