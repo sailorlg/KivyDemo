@@ -37,7 +37,9 @@ class DrawCanvasWidget(Widget):  # 布局类
 		"""调色"""
 		self.canvas.add(Color(*new_color))
 		
-
+	def change_line_width(self, line_width='Normal'):
+		"""线宽"""
+		self.line_width = {'Thin': 1, 'Normal': 2, 'Thick': 4}[line_width]
 
 class Paint35App(App):
 	def build(self):
