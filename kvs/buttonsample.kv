@@ -35,3 +35,9 @@
         text: "Button 05"
         pos: 565, 150
         state: "down"
+        on_release:
+            print("KV: on_release")
+            root.release_button("")
+        on_press:
+            print("KV: on_press")
+            root.press_button("")
