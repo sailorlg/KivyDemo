@@ -3,44 +3,47 @@
 
 
 <ButtonSampleWidget>:
-    Button:
-        text: "Button 00"
-        size_hint: 0.2, 0.15
-        pos: 65, 400
-        background_normal: ""
-        background_color: [0.1, 0.5, 0.5, 0.1]
+    orientation: "vertical"
 
-    MyButton:
-        text: "Button 01"
-        pos: 315, 400
-        disabled: True
+    BoxLayout:
+        Button:
+            text: "Button 00"
+            size_hint: 0.2, 0.15
+            pos: 65, 400
+            background_normal: ""
+            background_color: [0.1, 0.5, 0.5, 0.1]
 
-    MyButton:
-        text: "Button 02"
-        color: [0.8, 0.3, 0.3, 1]
-        pos: 565, 400
+        MyButton:
+            text: "Button 01"
+            pos: 315, 400
+            disabled: True
 
-    MyButton:
-        text: "Button 03"
-        font_size: 15
-        pos: 65, 150
+        MyButton:
+            text: "Button 02"
+            color: [0.8, 0.3, 0.3, 1]
+            pos: 565, 400
 
-    MyButton:
-        text: "Button 04"
-        font_size: 25
-        pos: 315, 150
-        state: "normal"
+        MyButton:
+            text: "Button 03"
+            font_size: 15
+            pos: 65, 150
 
-    MyButton:
-        text: "Button 05"
-        pos: 565, 150
-        state: "down"
-        on_release:
-            print("KV: on_release")
-            root.release_button("")
-        on_press:
-            print("KV: on_press")
-            root.press_button("")
+        MyButton:
+            text: "Button 04"
+            font_size: 25
+            pos: 315, 150
+            state: "normal"
+
+        MyButton:
+            text: "Button 05"
+            pos: 565, 150
+            state: "down"
+            on_release:
+                print("KV: on_release")
+                root.release_button("")
+            on_press:
+                print("KV: on_press")
+                root.press_button("")
 
     BoxLayout:
         orientation: "vertical"
@@ -58,7 +61,7 @@
         Label:
             canvas:
                 Color:
-                    rgba: (0.1, 0.1, 0.1, 0.1)
+                    rgba: (0, 0.1, 0.1, 0.1)
                 Rectangle:
                     pos: self.pos
                     size: self.size
@@ -70,3 +73,23 @@
             valigh: 'top'
             underline: True
             line_height: 2.0
+
+    BoxLayout:
+        orientation: 'vertical'
+
+        Label:
+            text: 'Can Only Display [i]Glyphs [color=rgba(0,127,127,255)] That Is Available[/color] in the font [/i]'
+            font_size: '20sp'
+            color: 0.9, 0.2, 0.1, 1
+            markup: 1
+
+        Label:
+            canvas:
+                Color:
+                    rgba:(0.1, 0.1, 0.1, 0.1)
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            text: '[b]Can Only Display [/b]Glyphs [sup] That [/sup] Is Available in the font'
+            color: 0.2, 0.2, 0.9, 1
+            markup: True
