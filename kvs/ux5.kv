@@ -26,3 +26,27 @@
             on_release:
                 print("Bubble-Btn-01")
                 root.bubble_btn_clicked()
+
+
+    CustomDropDown:
+        Button:
+            text: "Item-01"
+            size_hint_y: None
+            height: 45
+            on_release:
+                print("Item-01")
+                root.dropdown_btn("Item-01")
+        Button:
+            text: "Item-02"
+            size_hint_y: None
+            height: 45
+            on_release:
+                print("Item-02")
+                root.dropdown_btn("Item-02")
+        Button:
+            text: "Item-03"
+            size_hint_y: None
+            height: 45
+            on_release:
+                print("Item-03")
+                root.dropdown_btn("Item-03")

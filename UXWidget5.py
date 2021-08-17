@@ -8,6 +8,12 @@ Builder.load_file('./kvs/ux5.kv')
 
 from kivy.app import App
 from kivy.uix.gridlayout import GridLayout
+from kivy.uix.dropdown import DropDown
+
+
+class CustomDropDown(DropDown):
+	"""在kv文件中添加下拉菜单"""
+	pass
 
 class UXWidget(GridLayout):
 	def __init__(self, **kwargs):
@@ -17,6 +23,9 @@ class UXWidget(GridLayout):
 	def bubble_btn_clicked(self):
 		print("bubble_btn_clicked is RUNNING")
 		
+	def dropdown_btn(c_widget, value):
+		print("SELECTED ITEM == " + str(c_widget) + " \nVALUE ==" + value)
+		# print(args)
 
 class Ux5App(App):
 	def build(self):
