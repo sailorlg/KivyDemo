@@ -157,6 +157,28 @@ from kivy.uix.label import Label
 class ImageBoxLayout(GridLayout):
 	def __init__(self, **kwargs):
 		super().__init__(**kwargs)
+		
+		# 通过ID获取到CheckBox部件并绑定方法
+		self.ids.first_check_00.bind(active=self.on_checkbox_active)
+		self.ids.first_check_01.bind(active=self.on_checkbox_active)
+		self.ids.first_check_02.bind(active=self.on_checkbox_active)
+		self.ids.second_check_02.bind(active=self.on_checkbox_active_test)
+		
+	@staticmethod
+	def on_checkbox_active(checkbox, value):
+		if value:
+			print("The RadioButton", checkbox, " Is Actived; Value Is ", value)
+		else:
+			print("The RadioButton", checkbox, " Is IN-Actived; Value Is ", value)
+			
+
+	@staticmethod
+	def on_checkbox_active_test(checkbox, value):
+		if value:
+			print("The CheckBox", checkbox, " Is Actived; Value Is ", value)
+		else:
+			print("The CheckBox", checkbox, " Is IN-Actived; Value Is ", value)
+			
 	
 	def text_input_ref(self):
 		print("---INPUT 001----")

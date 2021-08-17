@@ -1,4 +1,5 @@
 <ImageBoxLayout>:
+    cols: 10
     canvas:
         Color:
             rgba: (1, 1, 1, 1)
@@ -29,3 +30,23 @@
         on_double_tap: self.pos=[self.x-5, self.y]
         on_triple_tap: self.pos=[self.x, self.y+5]
         on_quad_touch: self.pos=[400, 400]
+
+
+    CheckBox:
+        group: "check_00"
+        id: first_check_00
+        color: 0.6, 0.2, 0.2, 1
+
+    CheckBox:
+        group: "check_00"
+        id: first_check_01
+        color: 0.2, 0.6, 0.2, 1
+
+    CheckBox:
+        group: "check_00"
+        id: first_check_02
+        color: 0.2, 0.2, 0.6, 1
+
+    CheckBox:
+        id: second_check_02
+        color: 0.6, 0.6, 0.6, 1
