@@ -111,32 +111,30 @@
 # if __name__ == "__main__":
 # 	LabelRefApp().run()
 
-# ------------------------- 5 ------------------------
+
+# ------------------------- 6 ------------------------
 import os
+
 os.environ['KIVY_IMAGE'] = 'pil,sdl2'
 
 from kivy.lang import Builder
-Builder.load_file('./kvs/labelrefer.kv')
+
+Builder.load_file('./kvs/image4.kv')
 
 from kivy.app import App
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.label import Label
 
 
-class LableBoxLayout(BoxLayout):
+class ImageBoxLayout(BoxLayout):
 	def __init__(self, **kwargs):
 		super().__init__(**kwargs)
-		
-	# 未使用到self, 建议设置为静态方法
-	@staticmethod
-	def print_it(*args):
-		print("print_it is running~!")
+	
 
-
-class LabelReferApp(App):
+class Image4App(App):
 	def build(self):
-		return LableBoxLayout()
+		return ImageBoxLayout()
 
 
 if __name__ == "__main__":
-	LabelReferApp().run()
+	Image4App().run()
