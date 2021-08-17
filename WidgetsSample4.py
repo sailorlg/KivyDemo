@@ -179,6 +179,9 @@ class ImageBoxLayout(GridLayout):
 		else:
 			print("The CheckBox", checkbox, " Is IN-Actived; Value Is ", value)
 			
+	def on_slider_event(slider, value):
+		print("The CheckBox", slider, " Is Actived; Value Is ", value)
+			
 	
 	def text_input_ref(self):
 		print("---INPUT 001----")

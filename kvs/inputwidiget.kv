@@ -50,3 +50,21 @@
     CheckBox:
         id: second_check_02
         color: 0.6, 0.6, 0.6, 1
+
+    Slider:
+        min: 0
+        max: 100
+
+    Slider:
+        id: slider_move
+        orientation: 'vertical'
+        min: -100
+        max: 100
+        step: 10
+        value_track: True
+        value_track_color: [0.5, 1, 0, 1]
+        value: 25
+        pos: 100, 200
+        on_touch_down:
+            print("SLIDER DOWN")
+            root.on_slider_event(self.value)
