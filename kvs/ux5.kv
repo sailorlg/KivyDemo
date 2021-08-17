@@ -1,0 +1,17 @@
+<UXWidget>:
+    cols: 6
+    canvas:
+        Color:
+            rgba: (0.5, 0.6, 0.5, 1)
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+    Bubble:
+        allow_pos: "buttom_left"
+        background_image: "./images/down.jpg"
+
+    Bubble:
+        Button:
+            text: "Bubble-Btn"
+            on_release: print("BUBBLE-BUTTON Releaseed")
