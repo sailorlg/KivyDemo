@@ -112,29 +112,57 @@
 # 	LabelRefApp().run()
 
 
-# ------------------------- 6 ------------------------
+# # ------------------------- 6 ------------------------
+# import os
+#
+# os.environ['KIVY_IMAGE'] = 'pil,sdl2'
+#
+# from kivy.lang import Builder
+#
+# Builder.load_file('./kvs/image4.kv')
+#
+# from kivy.app import App
+# from kivy.uix.boxlayout import BoxLayout
+# from kivy.uix.label import Label
+#
+#
+# class ImageBoxLayout(BoxLayout):
+# 	def __init__(self, **kwargs):
+# 		super().__init__(**kwargs)
+#
+#
+# class Image4App(App):
+# 	def build(self):
+# 		return ImageBoxLayout()
+#
+#
+# if __name__ == "__main__":
+# 	Image4App().run()
+
+
+# ------------------------- 7 ------------------------
 import os
 
 os.environ['KIVY_IMAGE'] = 'pil,sdl2'
 
 from kivy.lang import Builder
-
-Builder.load_file('./kvs/image4.kv')
+Builder.load_file('./kvs/inputwidiget.kv')
 
 from kivy.app import App
 from kivy.uix.boxlayout import BoxLayout
+from kivy.uix.gridlayout import GridLayout
 from kivy.uix.label import Label
 
 
-class ImageBoxLayout(BoxLayout):
+class ImageBoxLayout(GridLayout):
 	def __init__(self, **kwargs):
 		super().__init__(**kwargs)
-	
 
-class Image4App(App):
+
+class InputWidiget(App):
 	def build(self):
 		return ImageBoxLayout()
 
 
 if __name__ == "__main__":
-	Image4App().run()
+	InputWidiget().run()
