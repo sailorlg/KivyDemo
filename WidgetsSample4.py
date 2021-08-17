@@ -153,6 +153,7 @@ from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.gridlayout import GridLayout
 from kivy.uix.label import Label
 from kivy.clock import Clock
+from kivy.core.window import Window
 
 
 class ImageBoxLayout(GridLayout):
@@ -205,4 +206,5 @@ class InputWidiget(App):
 
 
 if __name__ == "__main__":
+	Window.clearcolor = [0.5, 0.5, 0.5, 1]
 	InputWidiget().run()
