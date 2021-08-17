@@ -198,6 +198,12 @@ class ImageBoxLayout(GridLayout):
 			self.ids.process_bar.value += self.i
 			self.i += 1
 			self.update_bar_trigger()
+	
+	def callback(self):
+		print("CALLBACK is RUNNing")
+		
+	def play_video(self):
+		self.ids.video_test_00.state = 'play'
 
 
 class InputWidiget(App):

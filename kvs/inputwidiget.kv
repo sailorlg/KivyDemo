@@ -91,3 +91,14 @@
             state: 'down'
             on_release:
                 print("You have clicked Female Button")
+
+    Switch:
+        id:switch_btn
+        on_active:
+            root.callback()
+            root.play_video()
+
+    Video:
+        id:video_test_00
+        source: './images/videotest.mp4'
+        state: 'stop'
