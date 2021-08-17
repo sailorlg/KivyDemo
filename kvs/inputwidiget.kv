@@ -1,5 +1,5 @@
 <ImageBoxLayout>:
-    cols: 10
+    cols: 6
     canvas:
         Color:
             rgba: (1, 1, 1, 1)
@@ -68,3 +68,11 @@
         on_touch_down:
             print("SLIDER DOWN")
             root.on_slider_event(self.value)
+
+    ProgressBar:
+        value: 20
+        id: process_bar
+        max: 100
+        on_touch_down:
+            print("PROGRESS DOWN")
+            root.clicked()

@@ -152,6 +152,7 @@ from kivy.app import App
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.gridlayout import GridLayout
 from kivy.uix.label import Label
+from kivy.clock import Clock
 
 
 class ImageBoxLayout(GridLayout):
@@ -163,6 +164,8 @@ class ImageBoxLayout(GridLayout):
 		self.ids.first_check_01.bind(active=self.on_checkbox_active)
 		self.ids.first_check_02.bind(active=self.on_checkbox_active)
 		self.ids.second_check_02.bind(active=self.on_checkbox_active_test)
+		
+		self.i = 0
 		
 	@staticmethod
 	def on_checkbox_active(checkbox, value):
@@ -181,10 +184,19 @@ class ImageBoxLayout(GridLayout):
 			
 	def on_slider_event(slider, value):
 		print("The CheckBox", slider, " Is Actived; Value Is ", value)
-			
-	
+		
 	def text_input_ref(self):
 		print("---INPUT 001----")
+		
+	def clicked(self):
+		# 每0.5秒调用update_bar()方法一次
+		self.update_bar_trigger = Clock.schedule_interval(self.update_bar, 0.5)
+		
+	def update_bar(self, dt):
+		if self.i <= 100:
+			self.ids.process_bar.value += self.i
+			self.i += 1
+			self.update_bar_trigger()
 
 
 class InputWidiget(App):
