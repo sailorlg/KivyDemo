@@ -157,6 +157,9 @@ from kivy.uix.label import Label
 class ImageBoxLayout(GridLayout):
 	def __init__(self, **kwargs):
 		super().__init__(**kwargs)
+	
+	def text_input_ref(self):
+		print("---INPUT 001----")
 
 
 class InputWidiget(App):

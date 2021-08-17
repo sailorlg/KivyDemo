@@ -11,15 +11,21 @@
         multiline: False
         pos: 400, 380
         allow_copy: False
+        on_text_validate: self.pos=[self.x, self.y-5]
+        on_double_tap: root.text_input_ref()
 
     TextInput:
         text: "Input 002"
         pos: 100, 180
         haligh: 'center'
         background_color: 100, 2, 2, 1
+        on_text: self.pos=[self.x+5, self.y]
 
     TextInput:
         text: "Input 003"
         pos: 400, 180
         haligh: 'center'
         readonly: True
+        on_double_tap: self.pos=[self.x-5, self.y]
+        on_triple_tap: self.pos=[self.x, self.y+5]
+        on_quad_touch: self.pos=[400, 400]
