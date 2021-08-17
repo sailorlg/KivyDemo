@@ -1,0 +1,16 @@
+<LableBoxLayout>:
+    orientation: 'vertical'
+
+    Label:
+        canvas:
+            Color:
+                rgba: (0.1, 0.1, 0.1, 0.1)
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        text: '[color=rgba(0,127,127,255)][b][ref="click"] Can Only Display[/ref][/b][/color] Glyphs That Is Available In The Font'
+        color: 0.2, 0.2, 0.9, 1
+        markup: True
+        on_ref_press:
+            print("ref named click is running")
+            root.print_it()
