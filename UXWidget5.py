@@ -13,6 +13,10 @@ class UXWidget(GridLayout):
 	def __init__(self, **kwargs):
 		super().__init__(**kwargs)
 		
+	
+	def bubble_btn_clicked(self):
+		print("bubble_btn_clicked is RUNNING")
+		
 
 class Ux5App(App):
 	def build(self):

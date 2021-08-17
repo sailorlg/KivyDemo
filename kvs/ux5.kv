@@ -15,3 +15,14 @@
         Button:
             text: "Bubble-Btn"
             on_release: print("BUBBLE-BUTTON Releaseed")
+
+    Bubble:
+        BubbleButton:
+            text: "Bubble-Btn"
+        BubbleButton:
+            text: "Bubble-Btn-01"
+            background_normal: ""
+            background_color: 0.1, 0.5, 0.5, 1
+            on_release:
+                print("Bubble-Btn-01")
+                root.bubble_btn_clicked()
