@@ -56,13 +56,48 @@
 # 	Ux52App().run()
 
 
+#
+#
+# # ------------------------- 7 ------------------------
+# import os
+# os.environ['KIVY_IMAGE'] = 'pil,sdl2'
+#
+# from kivy.lang import Builder
+# Builder.load_file('./kvs/ux53.kv')
+#
+# from kivy.app import App
+# from kivy.uix.gridlayout import GridLayout
+# from kivy.uix.dropdown import DropDown
+# from kivy.uix.button import Button
+# from kivy.base import runTouchApp
+# from kivy.uix.popup import Popup
+#
+#
+#
+# class PopupBox(Popup):
+# 	def __init__(self, **kwargs):
+# 		super().__init__(**kwargs)
+#
+#
+# class Ux53App(App):
+# 	def build(self):
+# 		return PopupBox()
+#
+#
+# if __name__ == "__main__":
+# 	Ux53App().run()
+
+
+
 
 
 # ------------------------- 7 ------------------------
 import os
+
 os.environ['KIVY_IMAGE'] = 'pil,sdl2'
 
 from kivy.lang import Builder
+
 Builder.load_file('./kvs/ux53.kv')
 
 from kivy.app import App
@@ -73,11 +108,10 @@ from kivy.base import runTouchApp
 from kivy.uix.popup import Popup
 
 
-
 class PopupBox(Popup):
 	def __init__(self, **kwargs):
 		super().__init__(**kwargs)
-	
+
 
 class Ux53App(App):
 	def build(self):
